@@ -1,6 +1,7 @@
 import { Link } from "expo-router";
 import { FlatList, Text, View } from "react-native";
 import { useEffect, useState } from "react";
+import { globalStyles } from "../../globalStyles";
 
 export default function LocationsIndex() {
   const [locations, setLocations] = useState(null);
@@ -25,12 +26,27 @@ export default function LocationsIndex() {
   }
   return (
     <FlatList
+      contentContainerStyle={{
+        width: "100%",
+        backgroundColor: "white",
+        alignItems: "center",
+        gap: 15,
+      }}
       data={locations}
       renderItem={({ item }) => (
         <Link href={`/locations/${item.id}`}>
-          <View style={{ padding: 10 }}>
-            <Text>{item.name}</Text>
-            <Text>{item.type}</Text>
+          <View
+            style={{
+              padding: 10,
+              borderRadius: 10,
+              backgroundColor: "lightgray",
+              width: "100%",
+            }}
+          >
+            <Text>
+              <Text style={globalStyles.textHead2}>{item.name}</Text> (
+              {item.type})
+            </Text>
           </View>
         </Link>
       )}

@@ -30,12 +30,11 @@ export default function CharactersPage() {
       <FlatList
         data={characters}
         renderItem={({ item }) => (
-          <Link href={`/characters/${item.id}`}>
+          <Link href={`/characters/${item.id}`} style={{ padding: 10 }}>
             <Text
               style={{
                 color: "#007aff",
                 fontSize: 20,
-                padding: 10,
                 borderBottomWidth: 1,
                 borderBottomColor: "#ccc",
               }}

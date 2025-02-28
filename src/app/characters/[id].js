@@ -2,6 +2,7 @@ import { Text, View } from "react-native";
 import { useLocalSearchParams } from "expo-router";
 import { useEffect, useState } from "react";
 import { Image } from "expo-image";
+import { globalStyles } from "../../globalStyles";
 
 const blurhash =
   "|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[";
@@ -37,16 +38,15 @@ export default function CharacterPage() {
   }
 
   return (
-    <View style={{ backgroundColor: "white", flex: 1 }}>
-      <Text>Character Page</Text>
-      <Text>{character.name}</Text>
-      <Text>{character.status}</Text>
-      <Text>{character.species}</Text>
-      <Text>{character.image}</Text>
+    <View style={{ backgroundColor: "white", flex: 1, gap: 10, padding: 15 }}>
+      <Text style={globalStyles.textHead2}>
+        {character.name} ({character.status})
+      </Text>
+      <Text style={globalStyles.textHead2}>{character.species}</Text>
       <Image
         source={{ uri: character.image }}
         placeholder={{ blurhash }}
-        style={{ width: 100, height: 100 }}
+        style={{ width: "350", height: "400" }}
       />
     </View>
   );
