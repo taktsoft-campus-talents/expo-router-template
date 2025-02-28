@@ -1,5 +1,5 @@
-import { Text } from "react-native";
+import { Redirect } from "expo-router";
 
-export default function StartPage() {
-  return <Text>Start Page</Text>;
+export default function Index() {
+  return <Redirect href="/characters" />;
 }
