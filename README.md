@@ -19,3 +19,11 @@ https://rickandmortyapi.com/
   - Locations
 
 Use a stack navigation to show the details of each item.
+
+## TODOs
+
+- [ ] Replace the yellow background color
+- [ ] Styling characters list
+- [ ] Characters list "load more" needs to disappear when there are no more pages to load
+- [ ] Implement Locations list "load more" feature
+- [ ] Implement Episodes list and details screen
